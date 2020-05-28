@@ -172,7 +172,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1f51d0f5416319d4299e0e20f1e22195, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -403,18 +403,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 515272828102858355, guid: da780a4b05c8e774c936aad5aa690e61,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 57484cb2f45d24c43b2a88b178cb1a8d, type: 2}
-    - target: {fileID: 515272828102858355, guid: da780a4b05c8e774c936aad5aa690e61,
-        type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 515272828102858358, guid: da780a4b05c8e774c936aad5aa690e61, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da780a4b05c8e774c936aad5aa690e61, type: 3}
 --- !u!1 &126895853 stripped
 GameObject:
@@ -737,25 +726,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c85b009d9104e44a965c7d34b1eb721, type: 3}
---- !u!1 &513235493 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 515272828102858317, guid: da780a4b05c8e774c936aad5aa690e61,
-    type: 3}
-  m_PrefabInstance: {fileID: 1934329715}
-  m_PrefabAsset: {fileID: 0}
---- !u!135 &513235494
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 513235493}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 9.29
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &529315809 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1482555407114930329, guid: 4c85b009d9104e44a965c7d34b1eb721,
@@ -1862,6 +1832,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_NavMeshLayer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 515272828102858317, guid: da780a4b05c8e774c936aad5aa690e61,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 515272828102858353, guid: da780a4b05c8e774c936aad5aa690e61,
         type: 3}
@@ -3271,6 +3246,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 515272828102858317, guid: da780a4b05c8e774c936aad5aa690e61,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 515272828102858353, guid: da780a4b05c8e774c936aad5aa690e61,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3326,8 +3306,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 515272828102858358, guid: da780a4b05c8e774c936aad5aa690e61, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da780a4b05c8e774c936aad5aa690e61, type: 3}
 --- !u!1001 &1940526008
 PrefabInstance:
@@ -3396,8 +3375,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 515272828102858358, guid: da780a4b05c8e774c936aad5aa690e61, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da780a4b05c8e774c936aad5aa690e61, type: 3}
 --- !u!1001 &1943307138
 PrefabInstance:
@@ -3466,8 +3444,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 515272828102858358, guid: da780a4b05c8e774c936aad5aa690e61, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da780a4b05c8e774c936aad5aa690e61, type: 3}
 --- !u!1 &1965791541 stripped
 GameObject:

@@ -8,6 +8,7 @@ public class PlayerCharacter : MonoBehaviour
     GameObject[] buildings;
     Transform closestBuilding;
     Collider collider;
+    Collider sphereCollider;
 
     Vector3 direction;
     float speed;
@@ -17,6 +18,9 @@ public class PlayerCharacter : MonoBehaviour
     float waitTimer;
     bool atDestination = false;
 
+    float playerRange = 10;
+    public List<GameObject> otherPlayers = new List<GameObject>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +28,14 @@ public class PlayerCharacter : MonoBehaviour
         range = Random.Range(0, buildings.Length);
         closestBuilding = buildings[range].transform;
         collider = GetComponent<CapsuleCollider>();
+        sphereCollider = GetComponent<SphereCollider>();
+        foreach(GameObject go in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            if (!go.Equals(this.gameObject))
+            {
+                otherPlayers.Add(go);
+            }    
+        }
     }
 
     // Update is called once per frame
@@ -48,9 +60,13 @@ public class PlayerCharacter : MonoBehaviour
                 }
             }
         }
+        for (int i = 0; i < otherPlayers.Count; i++)
+        {
+            if (Vector3.Distance(transform.localPosition, otherPlayers[i].transform.position) <= playerRange)
+            {
+                Debug.Log("IN RANGE");
+            }
 
-        
-        
-        
+        }
     }
 }
