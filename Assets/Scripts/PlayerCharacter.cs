@@ -80,11 +80,8 @@ public class PlayerCharacter : MonoBehaviour
                 transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);               
             }
         }
-        for(int i = 0; i < 500; i++)
-        {
-            Vector3 target = RandomSpotLightCirclePoint(light);
-            Debug.DrawLine(target, target + Vector3.one * 0.01f, Color.red, 0.5f);
-        }
+        Vector3 target = RandomSpotLightCirclePoint(light);
+        Debug.DrawLine(target, target + Vector3.one * 0.01f, Color.red, 0.5f);
     }
 
     Vector3 RandomSpotLightCirclePoint(Light spot)
