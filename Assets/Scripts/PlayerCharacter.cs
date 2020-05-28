@@ -10,7 +10,6 @@ public class PlayerCharacter : MonoBehaviour
     Collider collider;
     Collider sphereCollider;
 
-    Vector3 direction;
     float speed;
     int range;
 
@@ -21,6 +20,11 @@ public class PlayerCharacter : MonoBehaviour
     float playerRange = 10;
     public List<GameObject> otherPlayers = new List<GameObject>();
 
+    float rotationSpeed = 3;
+    Vector3 direction;
+    Quaternion rotation;
+    Light light;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +33,9 @@ public class PlayerCharacter : MonoBehaviour
         closestBuilding = buildings[range].transform;
         collider = GetComponent<CapsuleCollider>();
         sphereCollider = GetComponent<SphereCollider>();
-        foreach(GameObject go in GameObject.FindGameObjectsWithTag("Player"))
+        speed = Random.Range(5, 8);
+        light = GetComponent<Light>();
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("Player"))
         {
             if (!go.Equals(this.gameObject))
             {
@@ -40,9 +46,12 @@ public class PlayerCharacter : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        speed = Random.Range(5, 8);
+    {      
         transform.localPosition = Vector3.MoveTowards(transform.localPosition, closestBuilding.transform.position, Time.deltaTime * speed);
+        direction = closestBuilding.transform.position - transform.position;
+        rotation = Quaternion.LookRotation(direction);
+        transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
+
         if(Vector3.Distance(transform.localPosition,closestBuilding.transform.position) < 0.1f)
         {
             waitTimer = Random.Range(2, 7);
@@ -56,6 +65,7 @@ public class PlayerCharacter : MonoBehaviour
                     range = Random.Range(0, buildings.Length);
                     closestBuilding = buildings[range].transform;
                     waitPeriod = 0;
+                    speed = Random.Range(5, 8);
                     atDestination = false;
                 }
             }
@@ -64,9 +74,24 @@ public class PlayerCharacter : MonoBehaviour
         {
             if (Vector3.Distance(transform.localPosition, otherPlayers[i].transform.position) <= playerRange)
             {
-                Debug.Log("IN RANGE");
+                speed = 0;
+                direction = otherPlayers[i].transform.position - transform.position;
+                rotation = Quaternion.LookRotation(direction);
+                transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);               
             }
-
         }
+        for(int i = 0; i < 500; i++)
+        {
+            Vector3 target = RandomSpotLightCirclePoint(light);
+            Debug.DrawLine(target, target + Vector3.one * 0.01f, Color.red, 0.5f);
+        }
+    }
+
+    Vector3 RandomSpotLightCirclePoint(Light spot)
+    {
+        float radius = Mathf.Tan(Mathf.Deg2Rad * spot.spotAngle / 2) * spot.range;
+        Vector2 circle = Random.insideUnitCircle * radius;
+        Vector3 target = spot.transform.position + spot.transform.forward * spot.range + spot.transform.rotation * new Vector3(circle.x, circle.y);
+        return target;
     }
 }
