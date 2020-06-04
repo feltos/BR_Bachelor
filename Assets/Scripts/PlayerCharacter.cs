@@ -59,6 +59,7 @@ public class PlayerCharacter : MonoBehaviour
 
             if (atDestination)
             {
+                speed = 0;
                 waitPeriod += Time.deltaTime;
                 if (waitPeriod >= waitTimer)
                 {
@@ -70,16 +71,16 @@ public class PlayerCharacter : MonoBehaviour
                 }
             }
         }
-        for (int i = 0; i < otherPlayers.Count; i++)
-        {
-            if (Vector3.Distance(transform.localPosition, otherPlayers[i].transform.position) <= playerRange)
-            {
-                speed = 0;
-                direction = otherPlayers[i].transform.position - transform.position;
-                rotation = Quaternion.LookRotation(direction);
-                transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);               
-            }
-        }
+        //for (int i = 0; i < otherPlayers.Count; i++)
+        //{
+        //    if (Vector3.Distance(transform.localPosition, otherPlayers[i].transform.position) <= playerRange)
+        //    {
+        //        speed = 0;
+        //        direction = otherPlayers[i].transform.position - transform.position;
+        //        rotation = Quaternion.LookRotation(direction);
+        //        transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);               
+        //    }
+        //}
         Vector3 target = RandomSpotLightCirclePoint(light);
         Debug.DrawLine(target, target + Vector3.one * 0.01f, Color.red, 0.5f);
     }
