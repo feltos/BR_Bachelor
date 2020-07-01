@@ -1017,6 +1017,56 @@ PrefabInstance:
       propertyPath: Events.StartWaitingForShrinking.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 215700081}
+    - target: {fileID: 114809880045031808, guid: bc7e809b4e0f1754abdb8823b7e50644,
+        type: 3}
+      propertyPath: ZoneCircles.Array.data[1].PositionAndRadius.Radius
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 114809880045031808, guid: bc7e809b4e0f1754abdb8823b7e50644,
+        type: 3}
+      propertyPath: ZoneCircles.Array.data[2].PositionAndRadius.Radius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 114809880045031808, guid: bc7e809b4e0f1754abdb8823b7e50644,
+        type: 3}
+      propertyPath: ZoneCircles.Array.data[3].PositionAndRadius.Radius
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 114809880045031808, guid: bc7e809b4e0f1754abdb8823b7e50644,
+        type: 3}
+      propertyPath: ZoneCircles.Array.data[4].PositionAndRadius.Radius
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114809880045031808, guid: bc7e809b4e0f1754abdb8823b7e50644,
+        type: 3}
+      propertyPath: ZoneCircles.Array.data[5].PositionAndRadius.Radius
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 114809880045031808, guid: bc7e809b4e0f1754abdb8823b7e50644,
+        type: 3}
+      propertyPath: ZoneCircles.Array.data[6].PositionAndRadius.Radius
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114809880045031808, guid: bc7e809b4e0f1754abdb8823b7e50644,
+        type: 3}
+      propertyPath: ZoneCircles.Array.data[0].PositionAndRadius.Radius
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 114809880045031808, guid: bc7e809b4e0f1754abdb8823b7e50644,
+        type: 3}
+      propertyPath: ZoneCircles.Array.data[7].PositionAndRadius.Radius
+      value: 105.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 114809880045031808, guid: bc7e809b4e0f1754abdb8823b7e50644,
+        type: 3}
+      propertyPath: ZoneCircles.Array.data[8].PositionAndRadius.Radius
+      value: 46.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114809880045031808, guid: bc7e809b4e0f1754abdb8823b7e50644,
+        type: 3}
+      propertyPath: ZoneCircles.Array.data[7].PositionAndRadius.Position.x
+      value: -2.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc7e809b4e0f1754abdb8823b7e50644, type: 3}
 --- !u!1 &2043012337
