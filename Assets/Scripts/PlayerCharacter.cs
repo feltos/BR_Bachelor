@@ -33,7 +33,7 @@ public class PlayerCharacter : MonoBehaviour
         closestBuilding = buildings[range].transform;
         collider = GetComponent<CapsuleCollider>();
         sphereCollider = GetComponent<SphereCollider>();
-        speed = Random.Range(5, 8);
+        speed = Random.Range(10, 20);
         light = GetComponent<Light>();
         foreach (GameObject go in GameObject.FindGameObjectsWithTag("Player"))
         {
