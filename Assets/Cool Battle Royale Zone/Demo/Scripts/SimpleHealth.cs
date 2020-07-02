@@ -32,6 +32,14 @@ namespace CoolBattleRoyaleZone
 											   zonePos );
 			// Checking if we inner of circle or not by radius and if not, start applying damage to health
 			if ( dstToZone > zoneRadius && !_wait ) StartCoroutine ( DoDamageCoroutine ( ) );
+
+
+			// Then choose text color : red if health less than 25 and green if greater than 25
+			var hpColor = Health > 25 ? "<color=green>" : "<color=red>";
+			if (HealthText)
+				HealthText.text = "Health: " + hpColor + Health + "</color>"; // Then setup this color to text
+			if (Health <= 0)
+				Destroy(gameObject); // And if health amount is zero,destroying the simple player
 		}
 
 		// Method for waiting time between applying damage
@@ -47,12 +55,6 @@ namespace CoolBattleRoyaleZone
 		private void DoDamage ( )
 		{
 			Health -= Zone.Instance.CurStep + 1; // Applying damage based on current step index
-			// Then choose text color : red if health less than 25 and green if greater than 25
-			var hpColor = Health > 25 ? "<color=green>" : "<color=red>";
-			if ( HealthText )
-				HealthText.text = "Health: " + hpColor + Health + "</color>"; // Then setup this color to text
-			if ( Health <= 0 )
-				Destroy ( gameObject ); // And if health amount is zero,destroying the simple player
 		}
 	}
 }

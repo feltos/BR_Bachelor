@@ -199,7 +199,6 @@ GameObject:
   - component: {fileID: 515272828102858355}
   - component: {fileID: 515272828102858354}
   - component: {fileID: 1794125959236554556}
-  - component: {fileID: 513235494}
   - component: {fileID: 2910734893162390948}
   - component: {fileID: 1634959121}
   - component: {fileID: 1551035687}
@@ -298,20 +297,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3735df18c11ec249a80356b96b62a71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerRange: 15
   otherPlayers: []
---- !u!135 &513235494
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 515272828102858317}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 10
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!120 &2910734893162390948
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -422,9 +409,9 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
+  m_Range: 25
+  m_SpotAngle: 25
+  m_InnerSpotAngle: 2
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -482,5 +469,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cf31db3308ef1147af9e91014462630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 10
+  Health: 50
   HealthText: {fileID: 1982678578}
