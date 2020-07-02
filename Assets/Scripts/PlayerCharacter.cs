@@ -82,7 +82,25 @@ public class PlayerCharacter : MonoBehaviour
         //    }
         //}
         Vector3 target = RandomSpotLightCirclePoint(light);
-        Debug.DrawLine(target, target + Vector3.one * 0.01f, Color.red, 0.5f);
+        Debug.DrawLine(transform.position, target, Color.red, 0.05f);
+        RaycastHit []hit = Physics.RaycastAll(transform.position, target - transform.position, Vector3.Distance(transform.position, target));
+       foreach(RaycastHit rayHit in hit)
+        {
+            if (rayHit.transform.gameObject != gameObject)
+            {
+                for(int i = 0; i < otherPlayers.Count; i++)
+                {
+                    if(otherPlayers[i] == rayHit.transform.gameObject)
+                    {
+                        //Health - 1; get component health manager and remove 1;
+                    }
+                }
+            }
+            else
+            {
+
+            }
+        }
     }
 
     Vector3 RandomSpotLightCirclePoint(Light spot)
