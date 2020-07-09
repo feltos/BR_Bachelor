@@ -11,8 +11,8 @@ public class PlayerCharacter : MonoBehaviour
     Collider collider;
     Collider sphereCollider;
 
-    float speed;
-    float randomSpeed;
+    public float speed;
+    public float randomSpeed;
     int range;
 
     float waitPeriod;
@@ -30,6 +30,8 @@ public class PlayerCharacter : MonoBehaviour
     bool fight = false;
 
     int nmbOfPlayers;
+
+    RaycastHit[] hit;
 
     // Start is called before the first frame update
     void Start()
@@ -104,19 +106,23 @@ public class PlayerCharacter : MonoBehaviour
                 rotation = Quaternion.LookRotation(direction);
                 transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed);
             }
+            else
+            {
+                fight = false;
+                speed = randomSpeed;
+            }
         }
 
-
-       Vector3 target = RandomSpotLightCirclePoint(light);
-       Debug.DrawLine(transform.position, target, Color.red, 0.05f);
-       RaycastHit []hit = Physics.RaycastAll(transform.position, target - transform.position, Vector3.Distance(transform.position, target));
-       foreach(RaycastHit rayHit in hit)
+        Vector3 target = RandomSpotLightCirclePoint(light);
+        Debug.DrawLine(transform.position, target, Color.red, 0.05f);
+        hit = Physics.RaycastAll(transform.position, target - transform.position, Vector3.Distance(transform.position, target));
+        foreach (RaycastHit rayHit in hit)
         {
             if (rayHit.transform.gameObject != gameObject)
             {
-                for(int i = 0; i < otherPlayers.Count; i++)
+                for (int i = 0; i < otherPlayers.Count; i++)
                 {
-                    if(otherPlayers[i] == rayHit.transform.gameObject)
+                    if (otherPlayers[i] == rayHit.transform.gameObject)
                     {
                         otherPlayers[i].GetComponent<SimpleHealth>().Health -= 1;
                         if (otherPlayers[i].GetComponent<SimpleHealth>().Health <= 0)
@@ -127,8 +133,6 @@ public class PlayerCharacter : MonoBehaviour
                 }
             }
         }
-
-       
     }
 
     Vector3 RandomSpotLightCirclePoint(Light spot)

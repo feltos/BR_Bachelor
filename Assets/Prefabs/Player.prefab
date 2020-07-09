@@ -297,6 +297,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3735df18c11ec249a80356b96b62a71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
+  randomSpeed: 0
   playerRange: 15
   otherPlayers: []
 --- !u!120 &2910734893162390948
