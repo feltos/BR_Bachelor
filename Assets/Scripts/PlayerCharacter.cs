@@ -88,6 +88,7 @@ public class PlayerCharacter : MonoBehaviour
                     waitPeriod = 0;
                     randomSpeed = Random.Range(10, 20);
                     atDestination = false;
+                    speed = randomSpeed;
                 }
             }
         }
@@ -101,7 +102,7 @@ public class PlayerCharacter : MonoBehaviour
                 speed = 0;
                 direction = otherPlayers[i].transform.position - transform.position;
                 rotation = Quaternion.LookRotation(direction);
-                transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
+                transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed);
             }
         }
 
@@ -124,10 +125,6 @@ public class PlayerCharacter : MonoBehaviour
                         }
                     }
                 }
-            }
-            else
-            {
-
             }
         }
 
