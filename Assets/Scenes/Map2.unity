@@ -7530,6 +7530,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5467a450c5cb82e4d9b7a602a7ce291e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  players: []
+  buildings: []
 --- !u!1001 &2067760365
 PrefabInstance:
   m_ObjectHideFlags: 0
